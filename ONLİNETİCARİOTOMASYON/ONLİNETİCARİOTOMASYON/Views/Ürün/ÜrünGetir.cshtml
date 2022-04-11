@@ -1,0 +1,36 @@
+﻿@model ONLİNETİCARİOTOMASYON.Models.Sınıflar.Ürünler
+@{
+    ViewBag.Title = "ÜrünGetir";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+<br />
+<h2>Ürün Güncelle </h2>
+<br />
+@using (Html.BeginForm("ÜrünGuncelle", "Ürün", FormMethod.Post))
+{
+
+    @Html.LabelFor(x => x.ürünid)
+    @Html.TextBoxFor(x => x.ürünid, new { @class = "form-control" })
+    @Html.LabelFor(x => x.ürünad)
+    @Html.TextBoxFor(x => x.ürünad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.marka)
+    @Html.TextBoxFor(x => x.marka, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.satışfiyat)
+    @Html.TextBoxFor(x => x.satışfiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.kategori.kategoriid)
+    @Html.DropDownListFor(x => x.Kategoriid, (List<SelectListItem>)ViewBag.dgr1)
+    <br />
+    @Html.LabelFor(x => x.ürüngörsel)
+    @Html.TextBoxFor(x => x.ürüngörsel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.durum)
+    @Html.TextBoxFor(x => x.durum, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-warning">Güncelle</button>
+
+
+}

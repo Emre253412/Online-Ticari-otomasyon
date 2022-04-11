@@ -1,0 +1,35 @@
+﻿@using ONLİNETİCARİOTOMASYON.Models.Sınıflar
+@model List<Ürünler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+
+<br />
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>ID</th>
+        <th>Ürün</th>
+        <th>Marka</th>
+        <th>Satış Fiyat</th>
+        <th>Kategori</th>
+        <th>Görsel</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var u in Model)
+    {
+<tr>
+    <td>@u.ürünid</td>
+    <td>@u.ürünad</td>
+    <td>@u.marka</td>
+    <td>@u.satışfiyat</td>
+    <td>@u.kategori.kategorıad</td>
+    <td>@u.ürüngörsel</td>
+    <td><a href="/Ürün/ÜrünSil/@u.ürünid" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Ürün/ÜrünGetir/@u.ürünid" class="btn btn-success">Güncelle</a></td>
+
+</tr>
+    }
+    </table>
+    <a href="/Ürün/YeniUrun" class="btn btn-info">Yeni Ürün</a>

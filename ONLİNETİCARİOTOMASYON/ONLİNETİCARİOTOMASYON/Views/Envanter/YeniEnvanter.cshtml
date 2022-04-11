@@ -1,0 +1,32 @@
+﻿@model ONLİNETİCARİOTOMASYON.Models.Sınıflar.Envanter
+@{
+    ViewBag.Title = "YeniEnvanter";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+<br />
+<h2>Yeni Ürün</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.envanterid)
+    <br />
+    @Html.LabelFor(x => x.alınanadet)
+    @Html.TextBoxFor(x => x.alınanadet, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.alisfiyat)
+    @Html.TextBoxFor(x => x.alisfiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.arızalıürünsayısı)
+    @Html.TextBoxFor(x => x.arızalıürünsayısı, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.serikod)
+    @Html.TextBoxFor(x => x.serikod, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ürünler.ürünid)
+    @Html.DropDownListFor(x => x.Ürünlerid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    @*@Html.DropDownListFor(x => x.Kategoriid,(List<SelectListItem>ViewBag.deger1))*@
+    @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
+    <br />
+
+    <button class="btn btn-primary">Kaydet</button>
+</form>
+

@@ -1,0 +1,31 @@
+﻿@using ONLİNETİCARİOTOMASYON.Models.Sınıflar
+@model List<Personel>
+@{
+    ViewBag.Title = "DepartmanDetay";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+<br />
+<h2>Departman Detay Sayfası</h2>
+<br />
+<ol class="breadcrumb mb-4>
+    <li class="breadcrumb-item active">Departman adı :@ViewBag.d</li>
+</ol>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>Personel ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Görsel</th>
+        <th>Satışlar</th>
+    </tr>
+    @foreach(var x in Model){
+    <tr>
+        <td>@x.personelid</td>
+        <td>@x.personelad</td>
+        <td>@x.personelsoyad</td>
+        <td>@x.personelgorsel</td>
+        <td><a href="#" class="btn btn-default" style="background-color:aqua">Satışlar</a></td>
+    </tr>
+    }
+</table>

@@ -1,0 +1,33 @@
+﻿@model ONLİNETİCARİOTOMASYON.Models.Sınıflar.Ürünler
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+
+<br />
+<h2>Yeni Ürün</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.ürünad)
+    @Html.TextBoxFor(x => x.ürünad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.marka)
+    @Html.TextBoxFor(x => x.marka, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.satışfiyat)
+    @Html.TextBoxFor(x => x.satışfiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.kategori.kategoriid)
+    @Html.DropDownListFor(x => x.Kategoriid,(List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    @*@Html.DropDownListFor(x => x.Kategoriid,(List<SelectListItem>ViewBag.deger1))*@
+    @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
+    <br />
+    @Html.LabelFor(x => x.ürüngörsel)
+    @Html.TextBoxFor(x => x.ürüngörsel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.durum)
+    @Html.TextBoxFor(x => x.durum, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+</form>
+

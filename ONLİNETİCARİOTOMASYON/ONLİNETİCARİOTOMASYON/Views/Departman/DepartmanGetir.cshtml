@@ -1,0 +1,22 @@
+﻿@model ONLİNETİCARİOTOMASYON.Models.Sınıflar.Departman
+@{
+    ViewBag.Title = "DepartmanGetir";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+
+<br />
+<h2>Departman Güncelle</h2>
+<br />
+@using (Html.BeginForm("DepartmanGuncelle", "Departman", FormMethod.Post))
+{
+
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.departmanad)
+        @Html.TextBoxFor(x => x.departmanad, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.departmanid)
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+
+
+}
